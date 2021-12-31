@@ -1,4 +1,4 @@
-package projects.java.thank_you.thank_you_fred.src.gui;
+package gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class Message extends JPanel {
     private static final int FRAME_HEIGHT = SIZE.height;
     private static final String MESSAGE = "CSA 2020-2021";
     private static final Font F = new Font("Times New Roman", Font.BOLD,75);
-    private static final URL url = Message.class.getResource("/projects/java/thank_you/thank_you_fred/src/gui/DohertyLogo.jpg");
+    private static final URL url = Message.class.getResource("/gui/DohertyLogo.jpg");
     private static final Image i = Toolkit.getDefaultToolkit().getImage(url);
 
     public Message() {
@@ -21,13 +21,10 @@ public class Message extends JPanel {
 
     }
 
-    @Override
     public Dimension getPreferredSize() {
-
         return new Dimension(FRAME_WIDTH, FRAME_HEIGHT);
     }
 
-    @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
@@ -45,7 +42,7 @@ public class Message extends JPanel {
 
         g.setFont(F);
         g.setColor(new Color(17, 106, 184));
-        g.drawString(MESSAGE, (FRAME_WIDTH / 2) - (fm.stringWidth(MESSAGE) / 2), FRAME_HEIGHT - i.getHeight(this) - 150); // Displays a text message onscreen
-        g.drawImage(i, (FRAME_WIDTH / 2) - (i.getWidth(this) / 2), FRAME_HEIGHT - i.getHeight(this) - 100, this); // Displays an image onscreen
+        g.drawString(MESSAGE, (FRAME_WIDTH / 2) - (fm.stringWidth(MESSAGE) / 2), FRAME_HEIGHT - i.getHeight(this) - 150);
+        g.drawImage(i, (FRAME_WIDTH / 2) - (i.getWidth(this) / 2), FRAME_HEIGHT - i.getHeight(this) - 100, this);
     }
 }
